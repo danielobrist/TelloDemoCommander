@@ -43,8 +43,8 @@ public class WifiDrone extends TelloDrone {
 
     @Override
     public void connect() throws TelloNetworkException, TelloCommandTimedOutException, TelloCustomCommandException, TelloGeneralCommandException {
-        // this.connect(TelloSDKValues.SIMULATOR_IP);
-        this.connect(TelloSDKValues.DRONE_IP_DST);
+        this.connect(TelloSDKValues.SIM_IP);
+        // this.connect(TelloSDKValues.DRONE_IP_DST);
     }
 
     @Override
