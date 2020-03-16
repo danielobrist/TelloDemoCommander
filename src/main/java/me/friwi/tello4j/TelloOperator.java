@@ -35,7 +35,7 @@ public class TelloOperator {
             // c) BOTH: Receive both frame types in each TelloVideoFrame
             drone.setVideoExportType(TelloVideoExportType.BUFFERED_IMAGE);
             //...and tell the drone to turn on the stream
-            drone.setStreaming(true);
+            //drone.setStreaming(true);
             //Now perform a flight plan
             drone.takeoff();
             drone.forward(30);
