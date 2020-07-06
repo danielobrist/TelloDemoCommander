@@ -73,6 +73,7 @@ public class TelloVideoThread extends Thread {
             try {
                 DatagramPacket packet = new DatagramPacket(buf, buf.length);
                 ds.receive(packet);
+                // System.out.println("Received: " + packet.getData());
                 handleInput(buf, packet.getLength());
             } catch (Exception e) {
                 //Ignore missing updates - no way to error them

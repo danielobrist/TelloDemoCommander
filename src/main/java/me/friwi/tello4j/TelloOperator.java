@@ -11,6 +11,7 @@ import me.friwi.tello4j.api.exception.TelloNoValidIMUException;
 import me.friwi.tello4j.api.video.TelloVideoExportType;
 import me.friwi.tello4j.api.video.VideoWindow;
 import me.friwi.tello4j.api.world.FlipDirection;
+import me.friwi.tello4j.api.world.TurnDirection;
 
 public class TelloOperator {
 
@@ -35,17 +36,44 @@ public class TelloOperator {
             // c) BOTH: Receive both frame types in each TelloVideoFrame
             drone.setVideoExportType(TelloVideoExportType.BUFFERED_IMAGE);
             //...and tell the drone to turn on the stream
+            /**
+             * TODO: Streaming not yet fully working.
+             */
             //drone.setStreaming(true);
             //Now perform a flight plan
+
+            /**
+             * Comment for testing purposes:
+             * The following commands are already implemented in the TelloSimulator:
+             *  .takeoff();
+             *  .up(x);
+             *  .down(x);
+             *  .left(x);
+             *  .right(x);
+             *  .forward(x);
+             *  .backward(x);
+             *  .turn(Turndirection.RIGHT/LEFT , degrees);
+             *  .flip(Flipdirection.FORWARD/BACKWARD/LEFT/RIGHT);
+             */
             drone.takeoff();
-            drone.forward(30);
-            drone.turnLeft(90);
-            drone.forward(30);
-            drone.backward(30);
+            drone.turn(TurnDirection.RIGHT, 90);
+            drone.forward(50);
+            drone.up(30);
+            drone.backward(50);
+            drone.down(20);
+            drone.right(50);
+            drone.turn(TurnDirection.RIGHT, 180);
+            drone.left(100);
+            drone.turn(TurnDirection.LEFT, 45);
+            drone.right(50);
             drone.flip(FlipDirection.FORWARD);
-            drone.turnRight(90);
-            drone.backward(30);
-            drone.land();
+            drone.turn(TurnDirection.LEFT, 25);
+            drone.flip(FlipDirection.RIGHT);
+
+
+            //drone.setStreaming(false);
+
+            //drone.land();
             //Prevent our drone from being closed
             //(the drone is automatically closed when leaving the try-with-resource block)
             while (true) ;
