@@ -128,6 +128,11 @@ public class WifiDrone extends TelloDrone {
         this.commandConnection.sendCommand(new FlipCommand(direction));
     }
 
+    // invalid command for testing purposes
+    public void flipp(FlipDirection direction) throws TelloCommandTimedOutException, TelloCustomCommandException, TelloNetworkException, TelloNoValidIMUException, TelloGeneralCommandException {
+        this.commandConnection.sendCommand(new FlippCommand(direction));
+    }
+
     public void move(int x, int y, int z, int speed) throws TelloCommandTimedOutException, TelloCustomCommandException, TelloNetworkException, TelloNoValidIMUException, TelloGeneralCommandException {
         this.commandConnection.sendCommand(new FlyParameterizedCommand(x, y, z, speed));
     }

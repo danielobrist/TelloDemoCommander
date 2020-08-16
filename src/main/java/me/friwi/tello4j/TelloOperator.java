@@ -43,8 +43,8 @@ public class TelloOperator {
             //Now perform a flight plan
 
             /**
-             * Comment for testing purposes:
-             * The following commands are already implemented in the TelloSimulator:
+             * The following commands are supported by the current iteration
+             * of the TelloSimulator:
              *  .takeoff();
              *  .up(x);
              *  .down(x);
@@ -54,12 +54,15 @@ public class TelloOperator {
              *  .backward(x);
              *  .turn(Turndirection.RIGHT/LEFT , degrees);
              *  .flip(Flipdirection.FORWARD/BACKWARD/LEFT/RIGHT);
+             *
+             *  Commands are executed one after the other.
              */
             drone.takeoff();
             drone.turn(TurnDirection.RIGHT, 90);
-            drone.forward(50);
+            drone.forward(5000);
             drone.up(30);
             drone.backward(50);
+            drone.flipp(FlipDirection.RIGHT);
             drone.down(20);
             drone.right(50);
             drone.turn(TurnDirection.RIGHT, 180);

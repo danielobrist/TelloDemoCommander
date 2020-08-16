@@ -26,7 +26,7 @@ public class FlyDirectionCommand extends ControlCommand {
 
     public FlyDirectionCommand(MovementDirection direction, int amount) {
         super(direction.getCommand() + " " + amount);
-        TelloArgumentVerifier.checkRange(amount, 20, 500, "The amount of %xcm exceeded the allowed range of [%min,%max]");
+        TelloArgumentVerifier.checkRange(amount, 20, 5000, "The amount of %xcm exceeded the allowed range of [%min,%max]");
         this.direction = direction;
         this.amount = amount;
     }
