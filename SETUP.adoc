@@ -16,10 +16,10 @@ image::screenshot1.1.PNG[]
 
 *Schritt 3:* Falls nötig GitHub Credentials angeben.
 
-*Schritt 4:* Falls von IntelliJ nicht automatisch als Maven Projekt erkannt: Klicke auf das pim.xml -> Add as Maven Project
+*Schritt 4:* Falls von IntelliJ nicht automatisch als Maven Projekt erkannt: Klicke auf das pom.xml -> Add as Maven Project
 
 *Schritt 4:* Eventuell Project SDK definieren (Analog zum Simulator Java Version 11 oder neuer)
 
-*Schritt 5:* src -> main -> java -> TelloOperaormain-Klasse starten (Rechtsklick auf Klasse -> Run...). Falls der TelloSimulator zuvor noch nie eingeschaltet wurde, wird hier eine Exception geworfen. Es muss zuerst die Drohne / der Simulator gestartet werden, bevor die Commands geschickt werden können.
+*Schritt 5:* src -> main -> java -> TelloOperator main-Klasse starten (Rechtsklick auf Klasse -> Run...). Falls der TelloSimulator zuvor noch nie eingeschaltet wurde, wird hier eine Exception geworfen. Es muss zuerst die Drohne / der Simulator gestartet werden, bevor die Commands geschickt werden können.
 
 //TODO: add screenshot
