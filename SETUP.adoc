@@ -16,10 +16,10 @@ image::screenshot1.1.PNG[]
 
 *Schritt 3:* Falls nötig GitHub Credentials angeben.
 
-*Schritt 4:* src -> main -> java -> TelloOperaor main-Klasse öffnen und ab Zeile 60 den Flight Plan der Drohne definieren. Einige commands sind schon vorhanden, können aber beliebig ersetzt werden.
+*Schritt 4:* Falls von IntelliJ nicht automatisch als Maven Projekt erkannt: Klicke auf das pim.xml -> Add as Maven Project
 
-//TODO: add screenshot
+*Schritt 4:* Eventuell Project SDK definieren (Analog zum Simulator Java Version 11 oder neuer)
 
-*Schritt 5:* main-Klasse starten (Rechtsklick auf Klasse -> Run...). Falls der TelloSimulator zuvor noch nie eingeschaltet wurde, wird hier eine Exception geworfen. Es muss zuerst die Drohne / der Simulator gestartet werden, bevor die Commands geschickt werden können.
+*Schritt 5:* src -> main -> java -> TelloOperaormain-Klasse starten (Rechtsklick auf Klasse -> Run...). Falls der TelloSimulator zuvor noch nie eingeschaltet wurde, wird hier eine Exception geworfen. Es muss zuerst die Drohne / der Simulator gestartet werden, bevor die Commands geschickt werden können.
 
 //TODO: add screenshot
