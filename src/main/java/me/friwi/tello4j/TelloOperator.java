@@ -25,7 +25,7 @@ public class TelloOperator {
                 //Do sth when switching from one to another state
             });
             //Create a video window to see things with our drones eyes
-            drone.addVideoListener(new VideoWindow());
+            //drone.addVideoListener(new VideoWindow());
             //...or use a custom video listener to process the single frames
             drone.addVideoListener(frame -> {
                 //Do sth when we received a frame

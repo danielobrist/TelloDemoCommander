@@ -19,10 +19,11 @@ package me.friwi.tello4j.wifi.model;
 import java.util.regex.Pattern;
 
 public class TelloSDKValues {
-    public static final String DRONE_IP_DST = "192.168.10.1";
+    public static final String DRONE_IP_DST = "192.168.10.1 ";
     public static final String COMMANDER_IP_DST = "0.0.0.0";
 
-    public static final int COMMAND_PORT = 8889;
+    public static final int OPERATOR_COMMAND_PORT = 8889;
+    public static final int SIMULATOR_COMMAND_PORT = 8889;
 
     public static final int STATE_PORT = 8890;
     public static final int STREAM_PORT = 11111;

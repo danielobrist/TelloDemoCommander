@@ -58,9 +58,9 @@ public class TelloCommandConnection {
             stateThread = new TelloStateThread(this);
             videoThread = new TelloVideoThread(this);
             this.remoteAddress = InetAddress.getByName(remote);
-            ds = new DatagramSocket(TelloSDKValues.COMMAND_PORT);
+            ds = new DatagramSocket(TelloSDKValues.OPERATOR_COMMAND_PORT);
             ds.setSoTimeout(TelloSDKValues.COMMAND_SOCKET_TIMEOUT);
-            ds.connect(remoteAddress, TelloSDKValues.COMMAND_PORT);
+            ds.connect(remoteAddress, TelloSDKValues.SIMULATOR_COMMAND_PORT);
             stateThread.connect();
             videoThread.connect();
             queue.start();
@@ -128,7 +128,7 @@ public class TelloCommandConnection {
     private void send(byte[] bytes) throws TelloNetworkException {
         if (!connectionState)
             throw new TelloNetworkException("Can not send/receive data when the connection is closed!");
-        DatagramPacket packet = new DatagramPacket(bytes, bytes.length, remoteAddress, TelloSDKValues.COMMAND_PORT);
+        DatagramPacket packet = new DatagramPacket(bytes, bytes.length, remoteAddress, TelloSDKValues.SIMULATOR_COMMAND_PORT);
         try {
             ds.send(packet);
         } catch (IOException e) {
