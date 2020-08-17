@@ -38,7 +38,9 @@ public class TelloVideoQueue extends Thread {
                 for (VideoListener listener : this.videoThread.getConnection().getDrone().getVideoListeners()) {
                     listener.onFrameReceived(frame);
                 }
+                System.out.println("frame not null");
             } else {
+                System.out.println("frame null");
                 try {
                     this.wait();
                 } catch (InterruptedException e) {

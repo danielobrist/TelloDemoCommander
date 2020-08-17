@@ -59,10 +59,10 @@ public class TelloOperator {
              */
             drone.takeoff();
             drone.turn(TurnDirection.RIGHT, 90);
-            drone.forward(5000);
+            drone.forward(500);
             drone.up(30);
             drone.backward(50);
-            drone.flipp(FlipDirection.RIGHT);
+            drone.flip(FlipDirection.RIGHT);
             drone.down(20);
             drone.right(50);
             drone.turn(TurnDirection.RIGHT, 180);
