@@ -93,6 +93,12 @@ public class TelloVideoThread extends Thread {
             return;
         }
         try {
+            System.out.println("bytes: " + bytes);
+            for(int i=0; i<bytes.length; i++) {
+                System.out.print(bytes[i] + " - ");
+            }
+            System.out.println("lenght: " + length);
+            System.out.println("pos: " + pos);
             pos.write(bytes, 0, length);
             pos.flush();
         } catch (IOException e) {
