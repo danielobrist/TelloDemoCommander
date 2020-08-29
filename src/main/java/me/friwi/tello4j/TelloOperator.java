@@ -58,20 +58,20 @@ public class TelloOperator {
              *  Commands are executed one after the other.
              */
             drone.takeoff();
-            drone.turn(TurnDirection.RIGHT, 90);
-            drone.forward(5000);
-            drone.up(30);
-            drone.backward(50);
-            drone.flipp(FlipDirection.RIGHT);
-            drone.down(20);
-            drone.right(50);
-            drone.turn(TurnDirection.RIGHT, 180);
-            drone.left(100);
-            drone.turn(TurnDirection.LEFT, 45);
-            drone.right(50);
-            drone.flip(FlipDirection.FORWARD);
-            drone.turn(TurnDirection.LEFT, 25);
-            drone.flip(FlipDirection.RIGHT);
+//            drone.turn(TurnDirection.RIGHT, 90);
+            drone.forward(50);
+//            drone.up(30);
+//            drone.backward(50)
+//            drone.flipp(FlipDirection.RIGHT);
+//            drone.down(20);
+//            drone.right(50);
+//            drone.turn(TurnDirection.RIGHT, 180);
+//            drone.left(100);
+//            drone.turn(TurnDirection.LEFT, 45);
+//            drone.right(50);
+//            drone.flip(FlipDirection.FORWARD);
+//            drone.turn(TurnDirection.LEFT, 25);
+//            drone.flip(FlipDirection.RIGHT);
 
 
             //drone.setStreaming(false);
