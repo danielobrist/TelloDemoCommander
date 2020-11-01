@@ -192,8 +192,6 @@ public abstract class TelloDrone implements AutoCloseable {
      */
     public abstract void flip(FlipDirection direction) throws TelloNetworkException, TelloCommandTimedOutException, TelloCustomCommandException, TelloNoValidIMUException, TelloGeneralCommandException;
 
-    public abstract void flipp(FlipDirection direction) throws TelloNetworkException, TelloCommandTimedOutException, TelloCustomCommandException, TelloNoValidIMUException, TelloGeneralCommandException;
-
 
     /**
      * Instructs this drone to move to a relative position (x, y, z) with a set speed
@@ -613,4 +611,7 @@ public abstract class TelloDrone implements AutoCloseable {
     public void setVideoExportType(TelloVideoExportType videoExportType) {
         this.videoExportType = videoExportType;
     }
+
+    public abstract void executeCustomCommand() throws TelloNetworkException, TelloCommandTimedOutException, TelloCustomCommandException, TelloNoValidIMUException, TelloGeneralCommandException;
+
 }

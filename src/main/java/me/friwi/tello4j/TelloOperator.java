@@ -58,9 +58,15 @@ public class TelloOperator {
              *  Commands are executed one after the other.
              */
             drone.takeoff();
+            // drone.executeCustomCommand(); // up mit Double
+            //.land();
+
 //            drone.turn(TurnDirection.RIGHT, 90);
-            drone.forward(50);
-//            drone.up(30);
+
+
+          //  drone.forward(50);
+          //  drone.flip(FlipDirection.BACKWARD);
+           drone.up(30);
 //            drone.backward(50)
 //            drone.flipp(FlipDirection.RIGHT);
 //            drone.down(20);
@@ -108,6 +114,8 @@ public class TelloOperator {
         } catch (TelloCommandTimedOutException e) {
             //This exception is thrown when a command is not answered by the drone for 20 seconds
             e.printStackTrace();
+        //} catch (InterruptedException e) {
+        //    e.printStackTrace();
         }
     }
 }

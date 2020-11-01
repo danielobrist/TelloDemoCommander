@@ -19,7 +19,11 @@ package me.friwi.tello4j.wifi.impl.network;
 import me.friwi.tello4j.api.exception.TelloException;
 import me.friwi.tello4j.api.exception.TelloNetworkException;
 import me.friwi.tello4j.api.world.FlipDirection;
+import me.friwi.tello4j.api.world.MovementDirection;
+import me.friwi.tello4j.wifi.impl.command.control.EnterSDKModeCommand;
 import me.friwi.tello4j.wifi.impl.command.control.FlipCommand;
+import me.friwi.tello4j.wifi.impl.command.control.FlyDirectionCommand;
+import me.friwi.tello4j.wifi.impl.command.control.TakeoffCommand;
 import me.friwi.tello4j.wifi.impl.command.set.RemoteControlCommand;
 import me.friwi.tello4j.wifi.model.TelloSDKValues;
 import me.friwi.tello4j.wifi.model.command.TelloCommand;
@@ -40,11 +44,13 @@ public class TelloCommandQueue extends Thread {
         setName("Command-Queue");
         while (running) {
             TelloCommand cmd = queue.poll();
-            TelloCommand cmd2 = new FlipCommand(FlipDirection.FORWARD); //TODO test
-            if (cmd != null && cmd2 != null) {//TODO test
+            //TelloCommand cmd2 = new FlyDirectionCommand(MovementDirection.RIGHT, 50); //TODO test
+            if (cmd != null ) {//TODO test&& cmd2 != null
                 try {
                     this.connection.send(cmd.serializeCommand());
-                    this.connection.send(cmd2.serializeCommand());//TODO test
+                    //if (!(cmd instanceof EnterSDKModeCommand) && !(cmd instanceof TakeoffCommand)){
+                    //    this.connection.send(cmd2.serializeCommand());//TODO test
+                    //}
                     //Read response, or assume ok with the remote control command
                     String data = cmd instanceof RemoteControlCommand ? "ok" : this.connection.readString().trim();
                     int attempt = 0;
